@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client extends Person {
-    private String login;
-    private String password;
+    public String login;
+    public String password;
     private String repeatPassword;
-    private List<Movie> rentalMoviesList;
+    public List<Movie> rentalMoviesList;
 
     public String getLogin() {
         return login;
