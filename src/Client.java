@@ -6,6 +6,7 @@ public class Client extends Person {
     public String password;
     private String repeatPassword;
     public List<Movie> rentalMoviesList;
+    public double penalty;
 
     public String getLogin() {
         return login;
@@ -39,6 +40,14 @@ public class Client extends Person {
         this.rentalMoviesList = rentalMoviesList;
     }
 
+    public double getPenalty() {
+        return penalty;
+    }
+
+    public void setPenalty(double penalty) {
+        this.penalty = penalty;
+    }
+
     public Client() {}
 
     public Client(String name, String surname, String telNumber, String mail, String login, String password) {
@@ -46,5 +55,6 @@ public class Client extends Person {
         this.login = login;
         this.password = password;
         rentalMoviesList = new ArrayList<Movie>();
+        this.penalty = 0;
     }
 }

@@ -1,3 +1,5 @@
+import java.util.Date;
+
 enum Genres {/*pominęłam obyczajowy*/
     Drama, Comedy, Horror, Biographical, Psychological, War, Gangster, Thriller
 }
@@ -38,6 +40,19 @@ public class Main {
 
         list.RentingMovie(c, f1);
         System.out.println("data wypożyczenia: " + f1.rentalDate +"\nData zwrotu: " + f1.returnDate);
+        System.out.println(new Date());
+
+        /*Date data1 = new Date(12/05/2019);
+        Date data2 = new Date();
+            Date now = new Date();
+            double penalty = 0;
+                if (data1.getTime() < data2.getTime()) {
+                    int days = data2.getDay() - data1.getDay();
+                    penalty = days * 1;
+                }
+
+                System.out.println(penalty);*/
+
 
     }
 }
