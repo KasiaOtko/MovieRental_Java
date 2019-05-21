@@ -1,5 +1,8 @@
 import java.time.LocalDateTime;
 import java.util.Calendar;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Movie {
@@ -8,8 +11,8 @@ public class Movie {
     private String director;
     private String releaseYear;
     public Genres genre;
-    public Calendar rentalDate;
-    public Calendar returnDate;
+    public Date rentalDate;
+    public Date returnDate;
 
     public String getTitle() {
         return title;
@@ -55,8 +58,13 @@ public class Movie {
         return rentalDate;
     }
 
+
     public void setRentalDate(Calendar rentalDate) {
+
+    public void setRentalDate(Calendar rentalDate) throws ParseException {
+        //SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
         this.rentalDate = rentalDate;
+
     }
 
     public Calendar getReturnDate() {
@@ -82,6 +90,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return"Title: " + title + "\nGenre: " + genre + "\nDirector: " + director + "\nRelease Year: " + releaseYear + "\nDescription: " + description;
+        return"Title: " + title + "\nGenre: " + genre + "\nDirector: " + director + "\nRelease Year: " + releaseYear + "\nDescription: " + description +"\n";
     }
 }
