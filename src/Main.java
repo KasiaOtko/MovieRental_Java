@@ -4,8 +4,10 @@ enum Genres {/*pominęłam obyczajowy*/
 public class Main {
 
     public static void main(String[] args) {
-        Person p = new Person("Kasia", "Otko", "3265416", "sdcsd");
+        Client p = new Client("Kasia", "Otko", "3265416", "sdcsd@wp.pl", "login", "password");
         System.out.println(p);
+
+
 
         Movie f1 = new Movie("Skazani na Shawshank", "Adaptacja opowiadania Stephena Kinga. Niesłusznie skazany na dożywocie bankier, stara się przetrwać w brutalnym, więziennym świecie.", "Frank Darabont", "1994", Genres.Drama);
         Movie f2 = new Movie("Nietykalni", "Sparaliżowany milioner zatrudnia do opieki młodego chłopaka z przedmieścia, który właśnie wyszedł z więzienia.", "Olivier Nakache, Eric Toledano", "2011", Genres.Biographical);
@@ -24,5 +26,13 @@ public class Main {
         Movie f15 = new Movie("Incepcja", "Czasy, gdy technologia pozwala na wchodzenie w świat snów. Złodziej Cobb ma za zadanie wszczepić myśl do śpiącego umysłu.", "Christopher Nolan", "2010", Genres.Thriller);
 
         System.out.println(f1);
+
+        AvaiableMoviesList RentingSystem = new AvaiableMoviesList("Company");
+        RentingSystem.AddMovie(f1);
+        RentingSystem.AddMovie(f2);
+        RentingSystem.AddMovie(f3);
+        RentingSystem.RentingMovie(p,f1);
+        System.out.println(f2.rentalDate);
+
     }
 }

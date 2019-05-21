@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Movie {
@@ -5,9 +7,9 @@ public class Movie {
     private String description;
     private String director;
     private String releaseYear;
-    private Genres genre;
-    private Date rentalDate;
-    private Date returnDate;
+    public Genres genre;
+    public Calendar rentalDate;
+    public Calendar returnDate;
 
     public String getTitle() {
         return title;
@@ -49,25 +51,25 @@ public class Movie {
         this.genre = genre;
     }
 
-    public Date getRentalDate() {
+    public Calendar getRentalDate() {
         return rentalDate;
     }
 
-    public void setRentalDate(Date rentalDate) {
+    public void setRentalDate(Calendar rentalDate) {
         this.rentalDate = rentalDate;
     }
 
-    public Date getReturnDate() {
+    public Calendar getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(Calendar returnDate) {
         this.returnDate = returnDate;
     }
 
     public Movie() {
-        rentalDate = new Date(Long.MIN_VALUE);
-        returnDate = new Date(Long.MIN_VALUE);
+        rentalDate = Calendar.getInstance();
+        returnDate = Calendar.getInstance();
     }
 
     public Movie(String title, String description, String director, String releaseYear, Genres genre) {
