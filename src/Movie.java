@@ -1,9 +1,10 @@
-import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.text.ParseException;
+import java.util.Locale;
 import java.util.Date;
+
 
 public class Movie {
     private String title;
@@ -88,6 +89,19 @@ public class Movie {
 
     @Override
     public String toString() {
-        return"Title: " + title + "\nGenre: " + genre + "\nDirector: " + director + "\nRelease Year: " + releaseYear + "\nDescription: " + description +"\n";
+
+        if(rentalDate==returnDate)
+        {
+            return"Title: " + title + "\nGenre: " + genre + "\nDirector: " + director + "\nRelease Year: " + releaseYear + "\nDescription: " + description +"\n";
+        }
+        else
+        {
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+            String date1 = sdf.format(rentalDate.getTime());
+            String date2 = sdf.format(returnDate.getTime());
+
+            return"Title: " + title + "\nGenre: " + genre + "\nDirector: " + director + "\nRelease Year: " + releaseYear + "\nDescription: " + description +"\nData wypożyczenia " + date1  + "\nData oddania: "+date2;
+        }
     }
 }

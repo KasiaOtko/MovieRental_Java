@@ -16,7 +16,7 @@ import java.util.Date;
 
 public class AvailableMoviesList {
     private String Name;
-    private List<Movie> MovieList;
+    private ArrayList<Movie> MovieList;
 
     public String getName() {
         return Name;
@@ -31,7 +31,7 @@ public class AvailableMoviesList {
         this.Name = name;
     }
 
-    public void setMovieList(List<Movie> movieList) {
+    public void setMovieList(ArrayList<Movie> movieList) {
         MovieList = movieList;
     }
 
@@ -67,6 +67,7 @@ public class AvailableMoviesList {
         //}
 
         //String rentalDate_
+        m.returnDate=Calendar.getInstance();
         m.returnDate.add(Calendar.MONTH, 1);
 
 
@@ -85,9 +86,9 @@ public class AvailableMoviesList {
         m.returnDate.add(Calendar.MONTH, 1);
     }
 
-    public List<Movie> GenresSearch(List<Movie> lm, Genres g)
+    public ArrayList<Movie> GenresSearch(ArrayList<Movie> lm, Genres g)
     {
-        List<Movie> newList = new ArrayList<Movie>();
+        ArrayList<Movie> newList = new ArrayList<Movie>();
         for(Movie m : lm)
         {
             if (m.genre == g)
@@ -128,7 +129,7 @@ public class AvailableMoviesList {
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
-        sb.append("Movies from : " + Name);
+        sb.append("Movies: \n" );
         for (Movie m : MovieList)
         {
             sb.append(m.toString());

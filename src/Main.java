@@ -7,8 +7,6 @@ public class Main {
         Client p = new Client("Kasia", "Otko", "3265416", "sdcsd@wp.pl", "login", "password");
         System.out.println(p);
 
-
-
         Movie f1 = new Movie("Skazani na Shawshank", "Adaptacja opowiadania Stephena Kinga. Niesłusznie skazany na dożywocie bankier, stara się przetrwać w brutalnym, więziennym świecie.", "Frank Darabont", "1994", Genres.Drama);
         Movie f2 = new Movie("Nietykalni", "Sparaliżowany milioner zatrudnia do opieki młodego chłopaka z przedmieścia, który właśnie wyszedł z więzienia.", "Olivier Nakache, Eric Toledano", "2011", Genres.Biographical);
         Movie f3 = new Movie("Zielona mila", "Emerytowany strażnik więzienny opowiada przyjaciółce o niezwykłym mężczyźnie, którego skazano na śmierć za zabójstwo dwóch 9-letnich dziewczynek.", "Frank Darabont", "1999", Genres.Drama);
@@ -27,12 +25,13 @@ public class Main {
 
         System.out.println(f1);
 
-        AvailableMoviesList RentingSystem = new AvailableMoviesList("Company");
-        RentingSystem.AddMovie(f1);
-        RentingSystem.AddMovie(f2);
-        RentingSystem.AddMovie(f3);
-        RentingSystem.RentingMovie(p,f1);
-        System.out.println(f2.rentalDate);
+        AvailableMoviesList list = new AvailableMoviesList();
+        list.AddMovie(f1);
+        list.AddMovie(f2);
+        list.AddMovie(f3);
+        list.RentingMovie(p,f1);
+        System.out.println("\n\n");
+        System.out.println(f1);
 
     }
 }

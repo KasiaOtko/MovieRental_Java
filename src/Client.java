@@ -59,4 +59,8 @@ public class Client extends Person {
         rentalMoviesList = new ArrayList<Movie>();
         this.penalty = 0;
     }
+
+
+
+
 }
