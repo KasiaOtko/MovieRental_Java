@@ -27,7 +27,7 @@ public class Main {
 
         System.out.println(f1);
 
-        AvaiableMoviesList RentingSystem = new AvaiableMoviesList("Company");
+        AvailableMoviesList RentingSystem = new AvailableMoviesList("Company");
         RentingSystem.AddMovie(f1);
         RentingSystem.AddMovie(f2);
         RentingSystem.AddMovie(f3);

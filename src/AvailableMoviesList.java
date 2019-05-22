@@ -55,22 +55,19 @@ public class AvailableMoviesList {
     {
         c.rentalMoviesList.add(m);
         MovieList.remove(m);
-        Calendar cal = Calendar.getInstance();
-        m.rentalDate = cal.getTime();
+        m.rentalDate = Calendar.getInstance();
         //Formatting rentalDate
-        DateFormat dateFormat = new SimpleDateFormat("EEE MMM dd hh:mm:ss zzz yyyy");
+        //DateFormat dateFormat = new SimpleDateFormat("EEE MMM dd hh:mm:ss zzz yyyy");
         //DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        String date = dateFormat.format(m.rentalDate);
-        try {
-            m.rentalDate = new SimpleDateFormat("dd-MM-yyyy").parse(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        //String date = dateFormat.format(m.rentalDate);
+       // try {
+       //     m.rentalDate = new SimpleDateFormat("dd-MM-yyyy").parse(date);
+       // } catch (ParseException e) {
+       //     e.printStackTrace();
+        //}
 
         //String rentalDate_
-
-        cal.add(Calendar.MONTH, 1);
-        m.returnDate = cal.getTime();
+        m.returnDate.add(Calendar.MONTH, 1);
 
 
 
@@ -84,10 +81,8 @@ public class AvailableMoviesList {
 
     public void Prolong(Movie m)
     {
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(m.returnDate);
-        cal.add(Calendar.MONTH, 1);
-        m.returnDate = cal.getTime();
+        //Calendar cal = Calendar.getInstance();
+        m.returnDate.add(Calendar.MONTH, 1);
     }
 
     public List<Movie> GenresSearch(List<Movie> lm, Genres g)

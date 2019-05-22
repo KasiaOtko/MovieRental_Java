@@ -11,8 +11,8 @@ public class Movie {
     private String director;
     private String releaseYear;
     public Genres genre;
-    public Date rentalDate;
-    public Date returnDate;
+    public Calendar rentalDate;
+    public Calendar returnDate;
 
     public String getTitle() {
         return title;
@@ -58,8 +58,6 @@ public class Movie {
         return rentalDate;
     }
 
-
-    public void setRentalDate(Calendar rentalDate) {
 
     public void setRentalDate(Calendar rentalDate) throws ParseException {
         //SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");

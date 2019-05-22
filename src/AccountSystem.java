@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -63,10 +64,10 @@ public class AccountSystem {
     }
 
     public void PenaltyCharging(Client c) {
-        Date now = new Date();
+        Calendar now = Calendar.getInstance();
         for (Movie m:c.rentalMoviesList) {
-            if (m.returnDate.getTime() < now.getTime()) {
-                int days = now.getDay() - m.returnDate.getDay();
+            if (now.after(m.returnDate)) {
+                long days = Math.round((m.returnDate.getTimeInMillis()-now.getTimeInMillis())/(24*60*60*1000));
                 c.penalty = days * 1;
             }
         }
